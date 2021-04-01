@@ -104,8 +104,18 @@ void khaiBaoVaKhoiTaoConTro()
 	printf("Gia tri hien tai cua b = %d", b);
 	
 }
+void sizeConTro()
+{
+	//Khi chạy như này chưa hết tốn một ô nhớ nào cả vì con trỏ chưa trỏ đến đâu cả
+	printf("SizeOf(char*) = %d\n", sizeof(char*));
+	printf("SizeOf(int*) = %d\n", sizeof(int*));
+	printf("SizeOf(long*) = %d\n", sizeof(long*));
+	printf("SizeOf(double*) = %d\n", sizeof(double*));
+	printf("SizeOf(float*) = %d\n", sizeof(float*));
+}
 int main()
 {
 	//conTroC();
-	khaiBaoVaKhoiTaoConTro();
+	//khaiBaoVaKhoiTaoConTro();
+	sizeConTro();
 }
