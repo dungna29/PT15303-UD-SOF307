@@ -67,54 +67,60 @@ void themPhanTu(int*& a, int& n, int viTriThem, int giaTriThem)
 int main()
 {
 
-	int arrNumber[3], * parrNumber;
-	//Cách 1
-	//parrNumber = arrNumber;//Ngầm định hiểu là địa chỉ của ô nhớ đầu tiên
+	// int arrNumber[3], * parrNumber;
+	// //Cách 1
+	// //parrNumber = arrNumber;//Ngầm định hiểu là địa chỉ của ô nhớ đầu tiên
+	//
+	// //Cách 2:
+	// //parrNumber = &arrNumber[0];	//Địa chỉ của ô nhớ đầu tiên
+	//
+	//
+	// //Cách làm cũ
+	// int arr[50];//Cách làm cũ
+	//
+	// //Cách triển khai mảng động
+	// int n;//= 4 byte
+	// do
+	// {
+	// 	printf_s("Nhap so luong phan tu: \n");
+	// 	scanf_s("%d", &n);
+	// 	if (n < 0)
+	// 	{
+	// 		printf_s("== So luong ban nhap khong hop le== \n");
+	// 	}
+	// } while (n < 0);
+	//
+	// //CÚ PHÁP CẤP PHÁT DỘNG vùng nhớ
+	// /*
+	//  * Mảng động khác biệt duy nhất là hàm thêm và hàm xóa
+	//  */
+	// int* a = NULL;//Khởi tạo con trỏ a có địa chỉ bằng NULL
+	// //Sử dụng hàm Malloc để cấp phát bộ nhớ
+	//
+	// //a = (int*)malloc(n * sizeof(int*));//ten con tro = (kieudulieu*)malloc(soluongonho * sizeof(kieudulieu))
+	//
+	// a = new int[n];
+	// //malloc không gán giá trị ban đầu
+	// //Calloc sẽ gán giá trị mặc định các ô nhớ
+	//
+	//
+	// //Phần 1: Nhập mảng
+	// nhapMang(a, n);
+	// inMang(a, n);
+	// //xoaPhanTu(a, n, 0);
+	// themPhanTu(a, n, 0, 0);
+	// printf_s("\n");
+	// inMang(a, n);
+	// if (a != NULL)
+	// {
+	// 	//free(a);//Giải phóng bộ nhớ
+	// 	//Nếu không giải phóng ô nhớ sẽ tốn rất nhiều tài nguyên của máy tính
+	// 	delete []a;
+	// }
 
-	//Cách 2:
-	//parrNumber = &arrNumber[0];	//Địa chỉ của ô nhớ đầu tiên
 
-
-	//Cách làm cũ
-	int arr[50];//Cách làm cũ
-
-	//Cách triển khai mảng động
-	int n;//= 4 byte
-	do
-	{
-		printf_s("Nhap so luong phan tu: \n");
-		scanf_s("%d", &n);
-		if (n < 0)
-		{
-			printf_s("== So luong ban nhap khong hop le== \n");
-		}
-	} while (n < 0);
-
-	//CÚ PHÁP CẤP PHÁT DỘNG vùng nhớ
-	/*
-	 * Mảng động khác biệt duy nhất là hàm thêm và hàm xóa
-	 */
-	int* a = NULL;//Khởi tạo con trỏ a có địa chỉ bằng NULL
-	//Sử dụng hàm Malloc để cấp phát bộ nhớ
-
-	//a = (int*)malloc(n * sizeof(int*));//ten con tro = (kieudulieu*)malloc(soluongonho * sizeof(kieudulieu))
-
-	a = new int[n];
-	//malloc không gán giá trị ban đầu
-	//Calloc sẽ gán giá trị mặc định các ô nhớ
-
-
-	//Phần 1: Nhập mảng
-	nhapMang(a, n);
-	inMang(a, n);
-	//xoaPhanTu(a, n, 0);
-	themPhanTu(a, n, 0, 0);
-	printf_s("\n");
-	inMang(a, n);
-	if (a != NULL)
-	{
-		//free(a);//Giải phóng bộ nhớ
-		//Nếu không giải phóng ô nhớ sẽ tốn rất nhiều tài nguyên của máy tính
-		delete []a;
-	}
+	//Quiz 2: Câu 3
+	int myArr[5] = { 1, 2, 3, 4, 5 };
+	int value = *(myArr + 2);
+	printf_s("%d", value);
 }
